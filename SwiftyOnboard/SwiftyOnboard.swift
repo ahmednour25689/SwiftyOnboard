@@ -67,6 +67,12 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
         let scrollView = UIScrollView()
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
+      if #available(iOS 11.0, *) {
+        scrollView.contentInsetAdjustmentBehavior = .never
+      } else {
+        // Fallback on earlier versions
+        
+      }
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.isUserInteractionEnabled = true
